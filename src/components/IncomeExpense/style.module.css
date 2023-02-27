@@ -1,0 +1,17 @@
+.container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+.subContainer {
+  line-height: 10px;
+  background-color: white;
+  padding: 20px 50px;
+}
+.income {
+  color: green;
+}
+.expense {
+  color: red;
+}

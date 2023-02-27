@@ -1,0 +1,22 @@
+.app-container {
+  width: 40%;
+  margin: auto;
+}
+
+@media screen and (max-width: 950px) {
+  .app-container {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .app-container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .app-container {
+    width: 100%;
+  }
+}

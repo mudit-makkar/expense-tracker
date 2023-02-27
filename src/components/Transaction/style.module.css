@@ -1,0 +1,40 @@
+.transaction {
+  display: flex;
+  margin-bottom: 20px;
+  background-color: white;
+  padding: 20px;
+  width: 100%;
+  font-size: large;
+}
+.deleteButtonContainer {
+  flex: 5%;
+}
+.deleteButton {
+  color: darkblue;
+  border: none;
+  background-color: inherit;
+  font-size: larger;
+  font-weight: bolder;
+  cursor: pointer;
+}
+.textContainer {
+  flex: 60%;
+  font-weight: bold;
+}
+.amount {
+  flex: 35%;
+  font-weight: bolder;
+  text-align: right;
+}
+@media screen and (max-width: 500px) {
+  .transaction,
+  .deleteButton {
+    font-size: large;
+  }
+}
+@media screen and (max-width: 300px) {
+  .transaction,
+  .deleteButton {
+    font-size: medium;
+  }
+}
