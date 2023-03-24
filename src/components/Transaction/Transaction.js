@@ -3,7 +3,7 @@ import { GlobalContext } from "../../GlobalContext";
 import styles from "./style.module.css";
 export const Transaction = ({ transaction }) => {
   const { deleteTransaction } = useContext(GlobalContext);
-  let sign = transaction.amount > 0 ? "+" : "-";
+  let sign = transaction.amount >= 0 ? "+" : "-";
 
   return (
     <div

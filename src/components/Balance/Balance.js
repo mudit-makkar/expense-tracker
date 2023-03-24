@@ -11,7 +11,9 @@ export const Balance = () => {
   return (
     <div className={styles.balanceContainer}>
       <h4>YOUR BALANCE</h4>
-      <h2>₹{balance.toFixed(2)}</h2>
+      <h2>
+        {balance < 0 && "-"} ₹{Math.abs(balance).toFixed(2)}
+      </h2>
     </div>
   );
 };
