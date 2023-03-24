@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import "./App.css";
 import { Header } from "./components/Header/Header";
 import { Balance } from "./components/Balance/Balance";
@@ -13,6 +13,9 @@ import "react-toastify/dist/ReactToastify.css";
 export const App = () => {
   const initialState = { transactions: [] };
   const [state, dispatch] = useReducer(AppReducer, initialState);
+  const [numberOfLoadedTransactions, setNumberOfLoadedTransactions] =
+    useState(5);
+  const [showButton, setShowButton] = useState(true);
 
   //on first render getting the state from local storage
   useEffect(() => {
@@ -40,10 +43,14 @@ export const App = () => {
     toast("Transaction deleted!");
   };
 
+  const loadMoreTransactions = () => {
+    setNumberOfLoadedTransactions(numberOfLoadedTransactions + 5);
+  };
+
   return (
     <GlobalContext.Provider
       value={{
-        transactions: state.transactions,
+        transactions: state.transactions.slice(0, numberOfLoadedTransactions),
         addTransaction,
         deleteTransaction,
       }}
@@ -55,6 +62,13 @@ export const App = () => {
         <IncomeExpense />
         <AddTransaction />
         <TransactionList />
+        {numberOfLoadedTransactions < state.transactions.length ? (
+          <button onClick={loadMoreTransactions} className="loadMoreButton">
+            Load More Transactions
+          </button>
+        ) : (
+          ""
+        )}
       </div>
     </GlobalContext.Provider>
   );

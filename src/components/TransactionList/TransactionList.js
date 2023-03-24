@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "../../GlobalContext";
 import { Transaction } from "../Transaction/Transaction";
 import styles from "./style.module.css";
